@@ -10,3 +10,6 @@ target
 /.project
 /.settings
 /RUNNING_PID
+=======
+*.class
+*.log
