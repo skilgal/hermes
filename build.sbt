@@ -1,3 +1,5 @@
+import Dependencies._
+
 name := """Hermes"""
 organization := "dev.skilgal"
 
@@ -9,9 +11,13 @@ scalaVersion := "2.13.6"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
+libraryDependencies ++= Seq(
+  scalaTest % Test,
+  slick,
+  slickHikari,
+  h2database
+)
 
-// Adds additional packages into Twirl
-//TwirlKeys.templateImports += "dev.skilgal.controllers._"
+lazy val `platform-test` = taskKey[Unit]("Platform Tests'")
 
-// Adds additional packages into conf/routes
-// play.sbt.routes.RoutesKeys.routesImport += "dev.skilgal.binders._"
+hello := println("hello world!")

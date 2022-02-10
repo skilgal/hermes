@@ -4,7 +4,11 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index()
+POST /api/v1/authenticate        controllers.AuthController.auth()
+GET  /api/v1/counters            controllers.CounterController.list()
+POST /api/v1/submit              controllers.CounterController.submit()
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
