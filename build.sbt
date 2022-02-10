@@ -17,7 +17,3 @@ libraryDependencies ++= Seq(
   slickHikari,
   h2database
 )
-
-lazy val `platform-test` = taskKey[Unit]("Platform Tests'")
-
-hello := println("hello world!")
