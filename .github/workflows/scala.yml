@@ -7,17 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-  test:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,19 +22,12 @@ jobs:
       run: sbt test
     - name: Platform tests
       run: ./scripts/ci.sh "platform test"
-  staging:
-    runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
     - name: Deploy to Staging
       run: ./scripts/ci.sh "deploy to staging"
     - name: Acceptance tests
       run: ./scripts/ci.sh "acceptance tests"
-      
-  production:
-    runs-on: ubuntu-latest
-    steps:
+
     - name: Deploy to Production
       run: ./scripts/ci.sh "deploy to production"
     - name: Post deploy tests
