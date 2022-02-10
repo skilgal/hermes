@@ -21,8 +21,11 @@ jobs:
     - name: Unit tests
       run: sbt test
     - name: Platform tests
-      run: sbt platform-test
+      run: echo '::set-output name=SELECTED_COLOR::green'
     - name: Deploy to Staging
+      run: echo '::set-output name=SELECTED_COLOR::green'
     - name: Acceptance tests
+      run: echo '::set-output name=SELECTED_COLOR::green'
     - name: Deploy to Production
+      run: echo '::set-output name=SELECTED_COLOR::green'
     - name: Post deploy tests
