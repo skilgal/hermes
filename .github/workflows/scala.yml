@@ -21,13 +21,13 @@ jobs:
     - name: Unit tests
       run: sbt test
     - name: Platform tests
-      run: echo '::set-output name=SELECTED_COLOR::green'
+      run: ./script/ci.sh "platform test"
     - name: Deploy to Staging
-      run: echo '::set-output name=SELECTED_COLOR::green'
+      run: ./script/ci.sh "deploy to staging"
     - name: Acceptance tests
-      run: echo '::set-output name=SELECTED_COLOR::green'
+      run: ./script/ci.sh "acceptance tests"
     - name: Deploy to Production
-      run: echo '::set-output name=SELECTED_COLOR::green'
+      run: ./script/ci.sh "deploy to production"
     - name: Post deploy tests
-      run: echo '::set-output name=SELECTED_COLOR::green'
+      run: ./script/ci.sh "test post-deploy"
 
