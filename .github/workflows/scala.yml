@@ -29,3 +29,5 @@ jobs:
     - name: Deploy to Production
       run: echo '::set-output name=SELECTED_COLOR::green'
     - name: Post deploy tests
+      run: echo '::set-output name=SELECTED_COLOR::green'
+
