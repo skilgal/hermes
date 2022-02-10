@@ -21,13 +21,13 @@ jobs:
     - name: Unit tests
       run: sbt test
     - name: Platform tests
-      run: ./script/ci.sh "platform test"
+      run: ./scripts/ci.sh "platform test"
     - name: Deploy to Staging
-      run: ./script/ci.sh "deploy to staging"
+      run: ./scripts/ci.sh "deploy to staging"
     - name: Acceptance tests
-      run: ./script/ci.sh "acceptance tests"
+      run: ./scripts/ci.sh "acceptance tests"
     - name: Deploy to Production
-      run: ./script/ci.sh "deploy to production"
+      run: ./scripts/ci.sh "deploy to production"
     - name: Post deploy tests
-      run: ./script/ci.sh "test post-deploy"
+      run: ./scripts/ci.sh "test post-deploy"
 
